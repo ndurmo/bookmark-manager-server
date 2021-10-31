@@ -1,0 +1,31 @@
+{
+  "name": "bookmark-manager-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --require dotenv/config -r esm src/index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ndurmo/bookmark-manager-server.git"
+  },
+  "author": "Naid Durmo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ndurmo/bookmark-manager-server/issues"
+  },
+  "homepage": "https://github.com/ndurmo/bookmark-manager-server#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "esm": "^3.2.25",
+    "express": "^4.17.1",
+    "express-validator": "^6.13.0",
+    "mongoose": "^6.0.12"
+  },
+  "devDependencies": {
+    "dotenv": "^10.0.0",
+    "nodemon": "^2.0.14"
+  }
+}
