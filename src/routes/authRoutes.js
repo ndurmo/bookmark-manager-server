@@ -30,4 +30,24 @@ router.post(
   authController.signup
 );
 
+router.post(
+  "/signin",
+  [
+    body("email")
+      .isEmail()
+      .withMessage("Please enter a valid email address")
+      .custom(async (value) => {
+        const user = await User.findOne({ email: value });
+        if (!user) {
+          return Promise.reject("User does not exist!");
+        }
+      }),
+    body("password")
+      .trim()
+      .isLength({ min: 4, max: 16 })
+      .withMessage("Enter a valid password"),
+  ],
+  authController.signin
+);
+
 export default router;
